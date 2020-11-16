@@ -1,72 +1,31 @@
 <html> 
 <head> 
 <title>Fecha y Hora</title> 
-<script language="JavaScript"> 
- function mueveReloj(){ 
-   var fechaActual = new Date();
-   var ano =  fechaActual.getFullYear();
-   var mes = fechaActual.getMonth()+1;
-   var dia = fechaActual.getDate();
+<script type="text/javascript" src="script.js"></script> 
 
-   if(mes <= 9){
-   	mes = "0"+mes;
-   }
-
-   if(dia <= 9){
-   	dia = "0"+dia;
-   }
-
-   var horaActual = new Date();
-   var hora = horaActual.getHours();
-   var minuto = horaActual.getMinutes(); 
-   var segundo = horaActual.getSeconds();
-   var amPm = "a.m.";
-
-   if(hora >= 12){
-   	hora = hora - 12;
-   	amPm = "p.m.";
-   }
-   if(hora == 0){
-   	hora = 12;
-   }
-
-   if(hora <= 9){
-   	hora = "0"+hora;
-   }
-
-   if(minuto <= 9){
-   	minuto = "0"+minuto;
-   }
-   	
-   if(segundo <= 9){
-   	segundo = "0"+segundo;
-   } 
-
-	var fechaImprimible = ano+" / "+mes+" / "+dia;
-	document.form_reloj.fecha.value = fechaImprimible;
-
-   var horaImprimible = hora+":"+minuto+":"+segundo+" "+amPm;
-   document.form_reloj.reloj.value = horaImprimible;
-   setTimeout("mueveReloj()",1000) 
-} 
-</script> 
 <style type="text/css">
-#fecha{
-	width:100%; height:50%; text-align:center; font-size:200px; color:blue; font-family:sans-serif;
-	font-weight:700; background-color:black; border-top:0px solid blue;
-}
-
-#reloj{
-	width:100%; height:50%; text-align:center; font-size:200px; color:blue; font-family:sans-serif; 
-   font-weight:700; background-color:black; border-top:0px solid blue;
-}		
+   @import"estilos.css";
 </style>
 </head> 
 
-<body onLoad="mueveReloj()"> 
-	<form name="form_reloj" > 
-		<input type="text" name="fecha" id="fecha" onFocus="window.document.form_reloj.fecha.blur()">
-		<input type="text" name="reloj" id="reloj" onFocus="window.document.form_reloj.reloj.blur()">
-	</form> 
+<body onload="mueveReloj();"> 
+   <div class="contenedor">
+      <!--<div class="r"></div>-->
+      <div class="day" id="day"></div>
+      <div class="typeHours">
+         <label><input type="radio" name="h12-24" id="h12" value="12" checked>12 H</label><br>
+         <label><input type="radio" name="h12-24" id="h24" value="24">24 H</label>
+      </div>
+      <div class="time hours" id="hours"></div>
+      <div class="time puntos">:</div>
+      <div class="time minutes" id="minutes"></div>
+      <div class="seconds" id="seconds"></div>
+      <div class="line"></div>
+      <div class="clock years" id="years"></div>
+      <div class="clock guion">-</div>
+      <div class="clock months" id="months"></div>
+      <div class="clock guion2">-</div>
+      <div class="clock days" id="days"></div>
+   </div>
 </body> 
 </html>
