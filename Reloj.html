@@ -1,6 +1,6 @@
 <html> 
 <head> 
-<title>Fecha y Hora</title> 
+<title>Fecha y hora</title> 
 <script type="text/javascript" src="script.js"></script> 
 
 <style type="text/css">
@@ -8,24 +8,24 @@
 </style>
 </head> 
 
-<body onload="mueveReloj();"> 
-   <div class="contenedor">
-      <!--<div class="r"></div>-->
-      <div class="day" id="day"></div>
-      <div class="typeHours">
-         <label><input type="radio" name="h12-24" id="h12" value="12" checked>12 H</label><br>
-         <label><input type="radio" name="h12-24" id="h24" value="24">24 H</label>
-      </div>
-      <div class="time hours" id="hours"></div>
-      <div class="time puntos">:</div>
-      <div class="time minutes" id="minutes"></div>
-      <div class="seconds" id="seconds"></div>
-      <div class="line"></div>
-      <div class="clock years" id="years"></div>
-      <div class="clock guion">-</div>
-      <div class="clock months" id="months"></div>
-      <div class="clock guion2">-</div>
-      <div class="clock days" id="days"></div>
-   </div>
+<body onload="mueveReloj();">
+   <br/><br/>
+   <center><h1>RELOJ</h1></center>
+   <table align="center" width="64%">
+      <tr>
+         <td><i class="day" id="day"></i></td>
+      </tr>
+      <tr>
+         <td align="right"><div class="hours" id="hours"></div></td>
+         <td width="24%"><div class="seconds" id="seconds"></div></td>
+      </tr>
+      <tr>
+         <td><p class="clock" id="date"></p></td>
+         <td>
+            <label><input type="radio" name="h12-24" id="h12" value="12" checked>12 H</label><br>
+            <label><input type="radio" name="h12-24" id="h24" value="24">24 H</label>
+         </td>
+      </tr>
+   </table>
 </body> 
 </html>
